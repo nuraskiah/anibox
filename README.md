@@ -38,14 +38,14 @@
   - [ ] (Optional) Gunakan data yang belum terpakai dari API, seperti trailer, episode, dll
   - [ ] (Optional) Tambahkan 'show more' dan 'show less' pada description ([contoh](https://www.geeksforgeeks.org/how-to-create-show-more-and-show-less-functionality-for-hiding-text-using-javascript/))
 
-### API
+## API
 
-#### Base URL
+### Base URL
 ```
 https://animeapi-askiahnur1.b4a.run
 ```
 
-#### Endpoints
+### Endpoints
 **Get Trending**
 ```
 /anime?sort=trending
