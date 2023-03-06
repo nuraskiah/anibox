@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniBox</title>
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <!-- style -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./tailwind.config.js"></script>
+</head>
+
+<body class="bg-black text-white">
+  <nav></nav>
+
+  <main class="px-16 mt-16 relative w-full">
+    <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white">
+      Search result for <span id="search-keyword" class="text-blue-600 dark:text-blue-500">jujutsu kaisen</span></h1>
+    <div id="result-container" class="grid gap-y-10 justify-between gap-x-3 mt-10 mb-10"
+      style="grid-template-columns: repeat(auto-fill, 14rem);">
+    </div>
+  </main>
+
+  <footer></footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+  <script src="./scripts/search.js" type="module"></script>
+</body>
+
+</html>
