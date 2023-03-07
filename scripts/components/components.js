@@ -33,22 +33,24 @@ export const bannerCarouselItem = ({
 
 export const section = ({ name, data }) => {
   return `
-    <section id="${name.toLowerCase()}">
-      <h4 class="text-2xl font-bold dark:text-white">${name}</h4>
-      <div class="relative mt-4">
-        <div id="${name.toLowerCase()}-container"
-          class="flex flex-nowrap overflow-x-scroll scroll-smooth hide-scroll-bar gap-x-4 snap-x snap-mandatory">
-          ${data
-            .map((item) =>
-              imageCard({
-                id: item.id,
-                title: item.title.romaji,
-                imageUrl: item.coverImage,
-                year: item.year,
-                genre: item.genres[0],
-              })
-            )
-            .join('')}
+    <section id="${name.toLowerCase()}" class="mt-16 relative">
+      <div class="px-16">
+        <h4 class="text-2xl font-bold dark:text-white">${name}</h4>
+        <div class="relative mt-4">
+          <div id="${name.toLowerCase()}-container"
+            class="flex flex-nowrap overflow-x-scroll scroll-smooth hide-scroll-bar gap-x-4 snap-x snap-mandatory">
+            ${data
+              .map((item) =>
+                imageCard({
+                  id: item.id,
+                  title: item.title.romaji,
+                  imageUrl: item.coverImage,
+                  year: item.year,
+                  genre: item.genres[0],
+                })
+              )
+              .join('')}
+          </div>
         </div>
       </div>
       <!-- Slider controls -->

@@ -4,11 +4,8 @@ import { initialSetup } from './index.js';
 
 initialSetup();
 
-const bannerContainer = document.getElementById('banner-container');
-
-const setBannerCarouselItem = () => {
-  //? ambil data dari API
-  // const banner = ....
+const setBannerCarouselItem = (banner) => {
+  const bannerContainer = document.getElementById('banner-container');
 
   const carouselItems = banner.map((item) =>
     bannerCarouselItem({
@@ -23,11 +20,37 @@ const setBannerCarouselItem = () => {
   );
 
   bannerContainer.innerHTML = carouselItems.join('');
+
+  const items = [];
+  let index = 0;
+  for (const item of bannerContainer.children) {
+    items.push({
+      position: index++,
+      el: item,
+    });
+  }
+
+  const carousel = new Carousel(items);
+  carousel.cycle();
+
+  const prevButton = document.querySelector('[data-carousel-prev]');
+  const nextButton = document.querySelector('[data-carousel-next]');
+
+  prevButton.onclick = () => {
+    carousel.prev();
+  };
+
+  nextButton.onclick = () => {
+    carousel.next();
+  };
 };
 
-setBannerCarouselItem();
-
 //? ambil data dari API
+// const trending = ....
+// ....
+
+setBannerCarouselItem(banner);
+
 const listSection = [
   {
     name: 'Trending',
@@ -38,6 +61,7 @@ const listSection = [
   //   name: 'Popular',
   //   data: ...,
   // },
+  // ...
 ];
 
 // menampilkan data ke halaman HTML
